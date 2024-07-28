@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Adm</title>
+    <link rel="stylesheet" href="loginart.css">
+</head>
+<body>
+    <header>
+        <h1>MixStudios - Login Adms</h1>
+    </header>
+    <section>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
+    </section>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simulação de verificação de login
+            if (email === 'admin@ebookstudio.com' && password === 'admin123') {
+                alert('Login bem-sucedido');
+                // Redirecionar para o dashboard admin (crie um arquivo admin-dashboard.html)
+                window.location.href = 'admin-dashboard.html';
+            } else {
+                document.getElementById('errorMessage').innerText = 'Email ou senha inválidos';
+            }
+        });
+    </script>
+</body>
+</html>
